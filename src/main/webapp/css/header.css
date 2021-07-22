@@ -62,3 +62,19 @@ header div form input:focus::placeholder{
 .head_left{
 	float:right;
 }
+.head_left #profile{
+	width : 40px;
+	height : 40px;
+	vertical-align:middle;
+	cursor : pointer;
+	border-radius: 70%;
+	overflow: hidden;
+}
+.head_left #refresh{
+	width : 40px;
+	height : 40px;
+	vertical-align:middle;
+	cursor : pointer;
+	border-radius: 70%;
+	overflow: hidden;
+}

@@ -50,7 +50,7 @@
 					</tr>
 				</table>
 				<div class="box">
-    				<img class="profile" src="img/thumb02.jpg">
+    				<img class="profile" src="img/bambi.jpg">
 				</div>
 			</div>
 			<hr>
