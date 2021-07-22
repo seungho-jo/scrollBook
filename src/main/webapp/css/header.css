@@ -1,0 +1,53 @@
+@charset "UTF-8";
+body{
+	margin : 0;
+}
+a{
+	text-decoration : none;
+	color : black;
+}
+header{
+	height : 55px;
+	border-bottom : 1px solid rgba(0,0,0,0.1);
+	
+}
+header div{
+	width : 975px;
+	height : 100%;
+	margin : 0 auto;
+}
+header div #title{
+	display : inline-block;
+	width : 100px;
+	height : 56px;
+	line-height : 55px;
+	padding : 0 430px 0 20px;
+}
+header div #title img{
+	width : 100px;
+	height : 36px;
+	vertical-align:middle;
+}
+header div a{
+	height : 56px;
+	line-height : 55px;
+}
+header div a img{
+	width : 40px;
+	height : 40px;
+	vertical-align:middle;
+}
+header div form{
+	display : inline-block;
+}
+header div form input{
+	height : 25px;
+	font-size : 16px;
+	text-align : center;
+}
+header div form input:focus{
+	text-align : left;
+}
+header div form input:focus::placeholder{
+	color: transparent;
+}

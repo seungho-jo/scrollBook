@@ -1,0 +1,79 @@
+@charset "UTF-8";
+a{
+	text-decoration : none;
+	color : black;
+}
+li{
+	list-style:none;
+}
+body{
+	margin : 0;
+}
+#body{
+	width : 975px;
+	height : 100%;
+	margin : 50px auto;
+}
+section{
+	width : 650px;
+	height : 100%;
+	float : left;
+}
+section #board #list{
+	height : 30px;
+	margin-bottom : 20px;
+}
+section #board #list ul{
+	display : flex;
+	padding : 0;
+}
+section #board #list ul li{
+	display : inline-black;
+	width : 203px;
+	text-align : center;
+}
+section #board #list ul li img{
+	width : 30px;
+	height : 30px;
+}
+section #board #list ul li img:hover{
+	cursor : pointer;
+}
+section #board img{
+	width : 203px;
+	height : 210px;
+}
+nav{
+	float : left;
+	width : 325px;
+	height : 100%;
+}
+nav div{
+	display : flex;
+}
+nav div table{
+	width : 220px;
+	text-align : center;
+}
+nav table tr:nth-child(1) td{
+	height : 65px;
+}
+nav table tr:nth-child(1) td h4{
+	display : inline-block;
+}
+nav table tr:nth-child(1) td a{
+	color : #22FF7B;
+}
+nav div .box {
+	display : inline-block;
+    width: 65px;
+    height: 65px; 
+    border-radius: 70%;
+    overflow: hidden;
+    margin-top : 25px;
+}
+nav div .box .profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
