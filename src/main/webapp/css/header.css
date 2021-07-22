@@ -2,7 +2,7 @@
 body{
 	margin : 0;
 }
-a{
+.head a{
 	text-decoration : none;
 	color : black;
 }
@@ -11,20 +11,20 @@ header{
 	border-bottom : 1px solid rgba(0,0,0,0.1);
 	
 }
-header div{
+.head{
 	width : 975px;
 	height : 100%;
 	margin : 0 auto;
 }
 header div #title{
 	display : inline-block;
-	width : 100px;
+	width : 155px;
 	height : 56px;
 	line-height : 55px;
-	margin : 0 430px 0 20px;
+	padding : 0 430px 0 20px;
 }
 header div #title img{
-	width : 100px;
+	width : 155px;
 	height : 36px;
 	vertical-align:middle;
 }
@@ -37,24 +37,28 @@ header div a img{
 	height : 40px;
 	vertical-align:middle;
 }
-header div #refresh{
-	width : 40px;
-	height : 40px;
-	vertical-align:middle;
-	cursor : pointer;
+a span{
+	font-size: 10px;
+}
+#profile img{
+	border-radius: 70%;
+	overflow: hidden;
 }
 header div form{
 	display : inline-block;
 }
 header div form input{
 	height : 25px;
-	font-size : 16px;
-	text-align : center;
-	padding-left : 10px;
+	padding-left : 5px;
+	font-size : 12px;
+	text-align : left;
 }
 header div form input:focus{
 	text-align : left;
 }
 header div form input:focus::placeholder{
 	color: transparent;
+}
+.head_left{
+	float:right;
 }
