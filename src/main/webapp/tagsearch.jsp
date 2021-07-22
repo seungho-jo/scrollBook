@@ -104,7 +104,7 @@ h3 {
 	<nav id="main_menu">
 		<div class="hashtag">
 				<ul class="topimg">
-					<li class="a"><img src="scrollimg/튤립1.JPG"></li>
+					<li class="a"><img src="img/튤립1.JPG"></li>
 					<li class="b">#튤립</li>
 					<li class="c">게시물 <span style="font-weight:bold">9</span></li>
 					

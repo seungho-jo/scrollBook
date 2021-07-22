@@ -13,9 +13,10 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<section>
-		<h2>게시물 만들기</h2>
-		<input type="button" value="게시">
-		<form>
+		<form action="mypage.jsp">
+			<h2>게시물 만들기</h2>
+			<input type="submit" value="게시">
+			<div id="clear"></div>
 			<select>
 				<option>선택하세요</option>
 				<option>모두 공개</option>

@@ -13,9 +13,9 @@
 </head>
 <body>
 	<section>
-		<form action="main.jsp" name = "loginInfo" onsubmit = "return checkValue()"> 
+		<form action="loginProc.jsp" name = "loginInfo" onsubmit = "return checkValue()"> 
 		<div id = "divScrollMain">
-		<img src = "image/ScrollBook.png" width=250px height = 100px>
+		<img src = "img/ScrollBook.png" width=250px height = 100px>
 			<div class = "IdPass">
 				<div class = "id"><input type="text" name = "id" placeholder="이메일 또는 휴대전화를 입력" maxlength="50">
 				</div>
