@@ -7,10 +7,10 @@ section{
 	height : 100%;
 	margin : 0 auto;
 }
-section h2{
+section form h2{
 	display : inline-block;
 }
-section [value="게시"]{
+section form [value="게시"]{
 	float : right;
 	margin : 20px 0;
 	background-color : #22FF7B;
@@ -19,7 +19,7 @@ section [value="게시"]{
 	border : 1px solid #22FF7B;
 	border-radius : 15%;
 }
-section form{
+section form #clear{
 	clear : both;	
 }
 section form select{

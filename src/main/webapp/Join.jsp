@@ -6,12 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel = stylesheet href = "login_CSS.css"/>
+<link rel = stylesheet href = "css/login_CSS.css"/>
 </head>
 <body>
 	<form method = "post" action="login.jsp" name = "userInfo" onsubmit="return checkValue()">
 		<div id = "divScrollMain">
-		<img src = "image/ScrollBook.png" width=250px height = 100px>
+		<img src = "img/ScrollBook.png" width=250px height = 100px>
 			<div class = "IdPass">
 				<div class = "id"><input type="text" name = "id" placeholder="이메일 또는 휴대전화를 입력" maxlength="50">
 				</div>
