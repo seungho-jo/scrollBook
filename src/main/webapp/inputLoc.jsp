@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="<%=path%>/a00_com/a00_com.css">
 </head>
 <body>
+	<h2>위치 입력</h2>
 	<input id="loc" type="text">
 	<input id="btn" type="button" value="추가">
 </body>
