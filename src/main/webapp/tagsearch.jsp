@@ -104,7 +104,7 @@ h3 {
 	<nav id="main_menu">
 		<div class="hashtag">
 				<ul class="topimg">
-					<li class="a"><img src="img/튤립1.JPG"></li>
+					<li class="a"><img src="img/yellow_tulip.jpg"></li>
 					<li class="b">#튤립</li>
 					<li class="c">게시물 <span style="font-weight:bold">9</span></li>
 					
@@ -115,7 +115,7 @@ h3 {
 		<div class="box">
 			<div class="clear"></div>
 			<ul class="items">
-				<a href=""><li><img src="img/튤립1.JPG" width="100%" height="100%"></li></a>
+				<a href="post.jsp"><li><img src="img/yellow_tulip.jpg" width="100%" height="100%"></li></a>
 				<a href=""><li><img src="img/튤립2.JPG" width="100%" height="100%"></li></a>
 				<a href=""><li><img src="img/튤립3.jpg" width="100%" height="100%"></li></a>
 				<a href=""><li><img src="img/튤립4.jpg" width="100%" height="100%"></li></a>

@@ -31,14 +31,16 @@
 				</div>
 			</div>
 			<div class="post_content">
-				<img src="img/yellow_tulip.jpg">
+				<img ondblclick="dblclick()" src="img/yellow_tulip.jpg">
 				<div class="post_under_img">
 					<div class="post_icons">
-						<div class="like" onclick="changeColor()">
+						<div class="like"  onclick="changeColor()">
 							<i class="far fa-heart fa-lg"></i>
 						</div>
 						<i class="far fa-comment fa-lg"></i>
+						<div class="share" onclick="showPopup()">
 						<i class="fas fa-share-alt fa-lg"></i>
+						</div>
 					</div>
 					<div class="post_likes">
 						<span>좋아요&nbsp0개</span>
@@ -48,7 +50,7 @@
 							<span>bangbang23</span>
 						</div>
 						<div class="post_text">
-							<span>튤립 사왔다</span>
+							<span>#튤립 사왔다</span>
 						</div>
 					</div>
 				</div>
@@ -84,5 +86,25 @@
 		chImg=!chImg;
 		console.log(chImg);
 	}
+	function dblclick(){
+		changeColor();
+	}
+	function showPopup() {
+		if(!confirm("해당 게시물을 SNS로 공유하시겠습니까? 취소를 누르면 URL이 복사됩니다.")){
+			var url = '';
+			var textarea = document.createElement("textarea");
+			document.body.appendChild(textarea);
+			url = window.document.location.href;
+			textarea.value = window.location.href;
+			textarea.select();
+			document.execCommand("copy");
+			document.body.removeChild(textarea);
+			alert("URL이 복사되었습니다.")
+			return false;
+		} 
+		window.open("popup.jsp","팝업테스트","width=260, height=160, top=10, left=10");
+	}
+
+	
 </script>
 </html>
