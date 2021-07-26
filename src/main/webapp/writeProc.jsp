@@ -6,7 +6,7 @@
 <%
 	request.setCharacterEncoding("utf-8"); // 요청값에대한 한글 encoding 처리
 	String path = request.getContextPath(); // 기준 경로 설정
-	String id = (String)session.getAttribute("idkey");
+	String id = (String)session.getAttribute("idKey");
 	String pubRange = request.getParameter("pubRange");
 	String contents = request.getParameter("contents");
 	String img = request.getParameter("profile_pt");
