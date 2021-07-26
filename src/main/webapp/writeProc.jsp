@@ -17,6 +17,7 @@
 	b.setPubRange(pubRange);
 	b.setContents(contents);
 	b.setImg(img);
+	b.setTag(tag);
 	b.setLoc(loc);
 	b.setID(id);
 	sv.writeBoard(b);
