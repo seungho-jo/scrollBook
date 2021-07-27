@@ -63,7 +63,7 @@ $(document).ready(function() {
 							<div class="more"></div>
 						</div>
 						<div class="up_del">
-							<a href="update.jsp">수정</a><br><span>삭제</span>
+							<a href="update.jsp?bcode=<%=b.getBcode()%>">수정</a><br><span>삭제</span>
 						</div>
 						<a href="#"><img class="picture" src="img/thumb02.jpg"></a>
 						<input type="hidden" value="<%=b.getBcode()%>">
