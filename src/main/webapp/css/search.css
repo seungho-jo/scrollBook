@@ -1,0 +1,9 @@
+@charset "UTF-8";
+         #autocomplete {
+         	font-size: 12px;
+         	padding: 3px;
+         	margin-left: 180px;
+            z-index:3;
+            display:none;
+            border: 1px solid black;
+         }
