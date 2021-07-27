@@ -94,7 +94,7 @@ $(document).ready(function() {
 				</div>
 			</div>
 			<hr>
-			<p>현직 웹 개발자 밤에 잠 좀 자고 싶습니다</p>
+			<p>현직 웹 개발자 밤에 잠 좀 자고 싶습니다!!</p>
 		</nav>
 		<div style="clear:both;"></div>
 	</div>
