@@ -226,4 +226,33 @@ public class Dao {
 				}
 			}
 		}
+	// 태그된 게시물 리스트 불러오기
+	public ArrayList<Board> tagBoard(String tag){
+		ArrayList<Board> list = new ArrayList<Board>();
+		try {
+			String sql = "select a.bcode, img from Board a,(select bcode from BoardTag where tag = ?) b"
+					+ " where a.bcode = b.bcode order by wdate desc";
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, tag);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board b = new Board();
+				b.setBcode(rs.getString("bcode"));
+				b.setImg(rs.getString("img"));
+				list.add(b);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
 }

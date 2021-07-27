@@ -32,4 +32,9 @@ public class Controller {
 		d.addAttribute("게시글 수정", sv.setBoard(bcode = blist.get(choice-1).getBcode(), id));
 		return "mypage.jsp";
 	}
+	// 태그된 게시물 리스트
+	public String tagBoard(Model d,String tag) {
+		d.addAttribute("태그된 게시물 리스트", sv.tagBoard(tag));
+		return "mypage.jsp";
+	}
 }

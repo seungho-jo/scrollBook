@@ -16,7 +16,7 @@ public class Main {
 		String pass = sc.nextLine();
 		// 게시물 조회
 		ctl.boardList(new Model(), id);
-		
+		/*
 		// 게시물 선택 후 보기
 		System.out.println("게시물 선택");
 		int choice = Integer.parseInt(sc.nextLine());
@@ -40,7 +40,7 @@ public class Main {
 		board.setPubRange(pubRange);
 		board.setID(id);
 		ctl.updateBoard(new Model(), board);
-	
+		*/
 		/*
 		// 로그인 이후 게시물 작성
 		System.out.println("#게시글 작성#");
@@ -62,6 +62,10 @@ public class Main {
 		board.setID(id);
 		ctl.writeBoard(new Model(),board);
 		*/
+		// 태그된 게시글 리스트
+		System.out.print("태그입력: ");
+		String tag = sc.nextLine();
+		ctl.tagBoard(new Model(), tag);		
 	}
 
 }
