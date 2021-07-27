@@ -6,7 +6,7 @@
 %>
 <%
 	request.setCharacterEncoding("utf-8");
-	String id = (String)session.getAttribute("idkey");
+	String id = (String)session.getAttribute("idKey");
 	String bcode = request.getParameter("bcode");
 	Dao dao = new Dao();
 	Board blist = dao.setBoard(bcode, id);
