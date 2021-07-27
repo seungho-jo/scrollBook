@@ -171,6 +171,7 @@ public class Dao {
 	}
 	// 게시물 업데이트
 		public void updateBoard(Board b) {
+			String[] ids = b.getID().split("@");
 			String[] tags = b.getTag().split(",");
 			int num = 1;
 			try {
