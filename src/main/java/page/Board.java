@@ -10,7 +10,7 @@ public class Board {
 	private String loc;
 	private String pubRange;
 	private Date wdate;
-	private String email;
+	private String ID;
 	public String getBcode() {
 		return bcode;
 	}
@@ -53,11 +53,11 @@ public class Board {
 	public void setWdate(Date wdate) {
 		this.wdate = wdate;
 	}
-	public String getEmail() {
-		return email;
+	public String getID() {
+		return ID;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setID(String ID) {
+		this.ID = ID;
 	}
 
 }
