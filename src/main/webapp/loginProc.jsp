@@ -8,7 +8,7 @@
 	String msg = "로그인에 실패 하였습니다.";
 
 
-	if(id.equals("himan@naver.com")&&pwd.equals("11")){
+	if(id.equals("jsh95320@naver.com")&&pwd.equals("1111")){
 		session.setAttribute("idKey" ,id);
 		msg = "로그인에 성공 하였습니다.";
 		url = "main.jsp";
