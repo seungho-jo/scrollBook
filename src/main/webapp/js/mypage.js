@@ -15,3 +15,24 @@ function click(idx){
 for(var idx=0;idx<listImg.length;idx++){
 	click(idx);
 }
+var picture = document.querySelectorAll(".picture");
+var moreDiv = document.querySelectorAll(".morediv");
+var up_del = document.querySelectorAll(".up_del");
+function shows(idx){
+	picture[idx].onmouseover = function(){	
+		moreDiv[idx].style.display = "inline-block";
+	}
+	moreDiv[idx].onmouseover = function(){
+		moreDiv[idx].style.display = "inline-block";
+	}
+	picture[idx].onmouseout = function(){	
+		moreDiv[idx].style.display = "none";
+		up_del[idx].style.display = "none";
+	}
+	moreDiv[idx].onclick = function(){
+		up_del[idx].style.display = "inline-block";
+	}
+}
+for(var idx=0;idx<picture.length;idx++){
+	shows(idx);
+}

@@ -1,7 +1,14 @@
+<%@page import="oracle.net.aso.b"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+	import = "page.*"
+	import = "java.util.*"
+%>
 <%
-	String id = request.getParameter("email");
+	String id = (String)session.getAttribute("idKey");
+	Dao dao = new Dao();
+	ArrayList<Board> list = dao.boardList(id);
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -11,6 +18,26 @@
 <link rel="stylesheet" href="css/mypage.css"/>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	$(".content").hide(); //Hide all content
+	$("ul li:first").addClass("active").show(); //Activate first tab
+	$(".content:first").show(); //Show first tab content
+
+	//On Click Event
+	$("ul li").click(function() {
+		$("ul li").removeClass("active"); //Remove any "active" class
+   	 	$(this).addClass("active"); //Add "active" class to selected tab
+    	$(".content").hide(); //Hide all tab content
+
+    	var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+    	$(activeTab).fadeIn(); //Fade in the active ID content
+    	return false;
+	});
+
+});
+
+</script>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
@@ -22,16 +49,29 @@
 			<div id="board">
 				<div id="list">
 					<ul>
-						<li><img src="img/게시물.PNG"></li>
-						<li><img src="img/컬랙션.PNG"></li>
-						<li><img src="img/태그됨.PNG"></li>
+						<li><a href="#tab1"><img src="img/게시물.PNG"></a></li>
+						<li><a href="#tab2"><img src="img/컬랙션.PNG"></a></li>
+						<li><a href="#tab3"><img src="img/태그됨.PNG"></a></li>
 					</ul>
 				</div>
-				<% 
-					for(int i = 0; i<=8; i++){
-				%>
-				<a href="#"><img src="img/thumb02.jpg"></a>
-				<%}%>
+				<div id="tab1" class="content">
+					<% 
+						for(Board b:list){
+					%>
+					<div>
+						<div class="morediv">
+							<div class="more"></div>
+						</div>
+						<div class="up_del">
+							<a href="update.jsp">수정</a><br><span>삭제</span>
+						</div>
+						<a href="#"><img class="picture" src="img/thumb02.jpg"></a>
+						<input type="hidden" value="<%=b.getBcode()%>">
+					</div>
+					<%}%>
+				</div>
+				<div id="tab2" class="content">tab2</div>
+				<div id="tab3" class="content">tab3</div>
 			</div>
 		</section>
 		<nav>
@@ -60,5 +100,15 @@
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
+<script type="text/javascript">
+var span = document.querySelector("span");
+span.onclick = function(){
+	var code = document.querySelector("[type=hidden]").value;
+	var rel = confirm("삭제하시겠습니까?");
+	if(rel){
+		location.href="delete.jsp?bcode="+code;
+	}
+}
+</script>
 <script type="text/javascript" src="js/mypage.js"></script>
 </html>

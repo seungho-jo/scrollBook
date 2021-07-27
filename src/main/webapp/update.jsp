@@ -28,14 +28,14 @@
 			<h2>게시물 만들기</h2>
 			<input type="submit" value="게시">
 			<div id="clear"></div>
-			<select>
-				<option name="pubRange">선택하세요</option>
+			<select name="pubRange">
+				<option>선택하세요</option>
 				<option value="모두 공개">모두 공개</option>
 				<option value="친구만">친구만</option>
 				<option value="비공개">비공개</option>
 			</select>
 			<hr>
-			<textarea name="contents" value=<%=blist.getContents() %>></textarea>
+			<textarea name="contents"><%=blist.getContents() %></textarea>
 			<div id='View_area'></div>
 			<hr>
 			<label id="upload">업로드</label>
@@ -56,15 +56,13 @@
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 <script type="text/javascript">
-	window.onload = function(){
-		var sel = document.querySelectorAll("select");
-		if(<%=blist.getPubRange()%> == "모두 공개"){
-			sel[0].selected = true;
-		}else if(<%=blist.getPubRange()%> == "친구만"){
-			sel[1].selected = true;
-		}else if(<%=blist.getPubRange()%> == "비공개"){
-			sel[2].selected = true;
-		}
+	var sel = document.querySelectorAll("select option");
+	if("<%=blist.getPubRange()%>" == sel[1].value){
+		sel[1].selected = true;
+	}else if("<%=blist.getPubRange()%>" == sel[2].value){
+		sel[2].selected = true;
+	}else if("<%=blist.getPubRange()%>" == sel[3].value){
+		sel[3].selected = true;
 	}
 </script>
 <script type="text/javascript" src="js/update.js"></script>
