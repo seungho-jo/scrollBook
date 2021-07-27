@@ -8,7 +8,7 @@
 	String id = (String)session.getAttribute("idKey");
 	Dao dao = new Dao();
 	ArrayList<Board> list = dao.boardList(id);
-	
+	ArrayList<Board> taglist = dao.tagBoard("@조승호");
 %>
 <!DOCTYPE html>
 <html>
@@ -71,7 +71,16 @@ $(document).ready(function() {
 					<%}%>
 				</div>
 				<div id="tab2" class="content">tab2</div>
-				<div id="tab3" class="content">tab3</div>
+				<div id="tab3" class="content">
+					<% 
+						for(Board tb:taglist){
+					%>
+					<div>
+						<a href="#"><img class="picture" src="img/thumb02.jpg"></a>
+						<input type="hidden" value="<%=tb.getBcode()%>">
+					</div>
+					<%}%>
+				</div>
 			</div>
 		</section>
 		<nav>

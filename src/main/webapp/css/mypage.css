@@ -77,6 +77,14 @@ section #board #tab1 div a .picture{
 	width : 203px;
 	height : 210px;
 }
+section #board #tab3 div{
+	display : inline-block;
+	position : relative;
+}
+section #board #tab3 div a .picture{
+	width : 203px;
+	height : 210px;
+}
 nav{
 	float : left;
 	width : 325px;

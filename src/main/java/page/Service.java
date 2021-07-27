@@ -47,5 +47,16 @@ public class Service {
 		System.out.println(brd.getLoc());
 		return "출력완료";
 	}
+	// 태그된 게시물 리스트
+	public String tagBoard(String tag) {
+		ArrayList<Board> blist = dao.tagBoard(tag);
+		int num = 1;
+		for(Board b:blist) {
+			System.out.print(num++ + " ");
+			System.out.println(b.getImg());
+			System.out.println("---------------------------------------");
+		}
+		return "출력완료";
+	}
 }
 
