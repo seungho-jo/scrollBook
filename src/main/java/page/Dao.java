@@ -255,4 +255,111 @@ public class Dao {
 		}
 		return list;
 	}
+	// 컬랙션 생성
+	public void createCollection(String id,String colname) {
+		String[] ids = id.split("@");
+		try {
+			String sql = "select * from USER_SEQUENCES where sequence_name = upper('seq_col_'||?)";
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, ids[0]);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				sql = "insert into collection values(?||seq_col_"+ids[0]+".nextval,?,?)";
+				conn = DBConnection.getConnection();
+				conn.setAutoCommit(false);
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, ids[0]);
+				pstmt.setString(2, id);
+				pstmt.setString(3, colname);
+				pstmt.executeUpdate();
+			}else {
+				sql = "create sequence seq_col_"+ids[0]+" "
+						+ "increment by 1 start with 1 minvalue 1 maxvalue 999999";
+				conn = DBConnection.getConnection();
+				conn.setAutoCommit(false);
+				pstmt = conn.prepareStatement(sql);
+				pstmt.executeUpdate();
+				sql = "insert into collection values(?||seq_col_"+ids[0]+".nextval,?,?)";
+				conn = DBConnection.getConnection();
+				conn.setAutoCommit(false);
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setString(1, ids[0]);
+				pstmt.setString(2, id);
+				pstmt.setString(3, colname);
+				pstmt.executeUpdate();
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	// 나의 컬랙션 리스트
+	public ArrayList<Collections> colList(String id){
+		ArrayList<Collections> clist = new ArrayList<Collections>();
+		try {
+			String sql = "select * from collection where ID = ?";
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Collections c = new Collections();
+				c.setColcode(rs.getString("colcode"));
+				c.setColname(rs.getString("colname"));
+				clist.add(c);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(rs!=null) rs.close();
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return clist;
+	}
+	// 게시물 저장
+	public void saveBoard(String colcode,String bcode) {
+		try {
+			String sql = "insert into collectionBoard values(?,?)";
+			conn = DBConnection.getConnection();
+			conn.setAutoCommit(false);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, colcode);
+			pstmt.setString(2, bcode);
+			pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
 }
