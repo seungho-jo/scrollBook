@@ -18,7 +18,6 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<jsp:include page="post.jsp"></jsp:include>
-	<jsp:include page="post2.jsp"></jsp:include>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
