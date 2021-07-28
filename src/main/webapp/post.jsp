@@ -61,11 +61,11 @@ function resize(obj){
 	<div class="main-wrap">
 		<section>
 			<%
-			for(int cnt=0;cnt<=10;cnt++){
-				String ids[] = {"bangbang23","jeoung_doo1","J0_seunghoo","0o_jin","hihimanan","ppaoppao","catangel","dogdogdog","not_y0Lo"};
-				String time[] = {"02:23","23:47","18:29","00:23","08:24","10:01","14:10","17:58","19:18"};
-				String img[] = {"cat.jpeg","catcat.jpeg","bambi.jpg","summer.jpg","yellow_tulip.jpg","튤립4.jpg","summer.png","튤립8.JPG","튤립6.jpg"};
-				String like[] = {"2521","23","5","11","1309","34","992","3","1","0"};
+			String[] ids = {"bangbang23","jeoung_doo1","J0_seunghoo","0o_jin","hihimanan","ppaoppao","catangel","dogdogdog","not_y0Lo"};
+			String[] time = {"02:23","23:47","18:29","00:23","08:24","10:01","14:10","17:58","19:18"};
+			String[] img = {"cat.jpeg","catcat.jpeg","bambi.jpg","summer.jpg","yellow_tulip.jpg","튤립4.jpg","summer.png","튤립8.JPG","튤립6.jpg"};
+			String[] like = {"2521","23","5","11","1309","34","992","3","1"};
+			for(int cnt=0;cnt<9;cnt++){
 			%>
 			<div class="post_info">
 				<div class="writer_img">
