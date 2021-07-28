@@ -1,13 +1,15 @@
-<%@page import="oracle.net.aso.b"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-	import = "page.*"
+	import = "page.Board"
+	import = "page.Dao"
+	import = "page.Collections"
 	import = "java.util.*"
 %>
 <%
 	String id = (String)session.getAttribute("idKey");
 	Dao dao = new Dao();
 	ArrayList<Board> list = dao.boardList(id);
+	ArrayList<Collections> clist = dao.colList(id);
 	ArrayList<Board> taglist = dao.tagBoard("@조승호");
 %>
 <!DOCTYPE html>
@@ -70,14 +72,19 @@ $(document).ready(function() {
 					</div>
 					<%}%>
 				</div>
-				<div id="tab2" class="content">tab2</div>
+				<div id="tab2" class="content">
+					<%for(Collections c: clist){ %>
+						<div class="sav"><%=c.getColname() %></div>
+						<input type="hidden" value="<%=c.getColcode()%>">
+					<%} %>
+				</div>
 				<div id="tab3" class="content">
 					<% 
 						for(Board tb:taglist){
 					%>
 					<div>
 						<a href="#"><img class="picture" src="img/thumb02.jpg"></a>
-						<input type="hidden" value="<%=tb.getBcode()%>">
+						<input type="hidden" class="del" value="<%=tb.getBcode()%>">
 					</div>
 					<%}%>
 				</div>
@@ -112,7 +119,7 @@ $(document).ready(function() {
 <script type="text/javascript">
 var span = document.querySelector("span");
 span.onclick = function(){
-	var code = document.querySelector("[type=hidden]").value;
+	var code = document.querySelector(".del").value;
 	var rel = confirm("삭제하시겠습니까?");
 	if(rel){
 		location.href="delete.jsp?bcode="+code;
