@@ -69,12 +69,12 @@ public class Main {
 		String tag = sc.nextLine();
 		ctl.tagBoard(new Model(), tag);
 		*/
-		/*
+		
 		// 컬랙션 생성
 		System.out.print("컬랙션 이름을 지어주세요: ");
 		String colname = sc.nextLine();
 		ctl.createCollection(new Model(), id, colname);
-		*/
+		
 		// 게시물 저장
 		System.out.println("게시물을 저장하시겠습니까?");
 		String sel = sc.nextLine();

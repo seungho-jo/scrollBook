@@ -77,6 +77,20 @@ section #board #tab1 div a .picture{
 	width : 203px;
 	height : 210px;
 }
+section #board #tab2 .sav{
+	width : 193px;
+	height : 200px;
+	background : linear-gradient(to bottom, white, gray);
+	display : inline-block;
+	cursor : pointer;
+	border-radius : 5%;
+	border-top : 1px solid gray;
+	padding : 10px 0 0 10px;
+	margin-bottom : 10px;
+}
+section #board #tab2 .sav:hover{
+	background : linear-gradient(to bottom, white, black);
+}
 section #board #tab3 div{
 	display : inline-block;
 	position : relative;
