@@ -58,5 +58,26 @@ public class Service {
 		}
 		return "출력완료";
 	}
+	// 컬랙션 생성
+		public String createCollection(String id,String colname) {
+			dao.createCollection(id, colname);
+			return "생성완료";
+		}
+		// 나의 컬랙션 리스트
+		public ArrayList<Collections> colList(String id) {
+			ArrayList<Collections> clist = dao.colList(id);
+			int num = 1;
+			for(Collections c: clist) {
+				System.out.print(num++ + " ");
+				System.out.println(c.getColname());
+				System.out.println("---------------------------------------");
+			}
+			return clist;
+		}
+		// 게시물 저장
+		public String saveBoard(String colcode,String bcode) {
+			dao.saveBoard(colcode, bcode);
+			return "저장완료";
+		}
 }
 
