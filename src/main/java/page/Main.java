@@ -76,6 +76,7 @@ public class Main {
 		System.out.print("컬랙션 이름을 지어주세요: ");
 		String colname = sc.nextLine();
 		ctl.createCollection(new Model(), id, colname);
+		*/
 		
 		// 게시물 저장
 		System.out.println("게시물을 저장하시겠습니까?");
@@ -86,7 +87,7 @@ public class Main {
 			int num = Integer.parseInt(sc.nextLine());
 			ctl.saveBoard(new Model(), num);
 		}
-		*/
+		
 		ctl.colList(new Model(), id);
 		System.out.println("컬랙션 선택 : ");
 		int num = Integer.parseInt(sc.nextLine());
