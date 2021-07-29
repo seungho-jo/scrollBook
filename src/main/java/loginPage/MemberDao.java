@@ -155,16 +155,18 @@ public class MemberDao {
 	   }
 	   
 	   public Member getMember(String id, String pass) {
-		   Member m = null;
-		   boolean flag = false; 
+		   Member m = new Member(); 
 		   try {
 		         String sql = "SELECT * FROM SCROLLBOOK_MEM WHERE ID = ? AND PASS = ?";
 		         conn = DBConnection.getConnection();
 		         pstm = conn.prepareStatement(sql);
-		         pstm.setString(1, m.getEmail());
-		         pstm.setString(2, m.getPass());
+		         pstm.setString(1, id);
+		         pstm.setString(2, pass);
 		         rs = pstm.executeQuery();
-		         flag = rs.next(); //true면 로그인 성공, false 면 로그인 실패
+		         if(rs.next()) {
+		        	 m.setEmail(rs.getString("ID"));
+		        	 m.setPass(rs.getString("PASS"));;
+		         }
 		      } catch (SQLException e1) {
 		         System.out.println("예외발생");
 		         e1.printStackTrace();
@@ -197,27 +199,46 @@ public class MemberDao {
 			String sql = null;
 			try {
 				con = DBConnection.getConnection();
-				sql = "delete from scrollbook_mem where id=?";	// 아이디 삭제 sql
+				sql = "select * from scrollbook_mem where id=? and pass = ?";	// 아이디 삭제 sql
 				pstmt = con.prepareStatement(sql);
-				conn.setAutoCommit(false);
+				con.setAutoCommit(false);
 				pstmt.setString(1, m.getEmail());
-				if(pstmt.executeUpdate()==1) {flag = true;} 
-				 sql = "drop sequence seq_"+ids[0];		// 해당 시퀀스 삭제 sql
-				 conn.setAutoCommit(false);
-		         pstm = conn.prepareStatement(sql);
-		         pstm.executeUpdate();
+				pstmt.setString(2, m.getPass());
+				rs = pstmt.executeQuery();
+				if(rs.next()) {
+					con = DBConnection.getConnection();
+					sql = "delete from scrollbook_mem where id=? and pass = ?";	// 아이디 삭제 sql
+					pstmt = con.prepareStatement(sql);
+					con.setAutoCommit(false);
+					pstmt.setString(1, m.getEmail());
+					pstmt.setString(2, m.getPass());
+					pstmt.executeUpdate();
+					con.commit();
+					sql = "drop sequence seq_"+ids[0];		// 해당 시퀀스 삭제 sql
+					con.setAutoCommit(false);
+					pstmt = con.prepareStatement(sql);
+					pstmt.executeUpdate();
+					con.commit();
+					flag = true;
+				}
 			}catch (Exception e) {
 				e.printStackTrace();
+				try {
+					con.rollback();
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}finally {
 				try {
 				 if (rs != null) {
 		               rs.close();
 		            }
-		            if (pstm != null) {
-		               pstm.close();
+		            if (pstmt != null) {
+		               pstmt.close();
 		            }
-		            if (conn != null) {
-		               conn.close();
+		            if (con != null) {
+		               con.close();
 		            }
 		         } catch (Exception e1) {
 		            throw new RuntimeException(e1.getMessage());

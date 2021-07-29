@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
- 	import = "project6.*"
+ 	import = "loginPage.*"
 %>
 <%
 	request.setCharacterEncoding("utf-8");	//요청값에 대한 한글 encoding처리.
