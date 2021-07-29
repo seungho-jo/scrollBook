@@ -6,6 +6,7 @@ section{
 	width : 975px;
 	height : 100%;
 	margin : 0 auto;
+	min-height : 800px;
 }
 section form h2{
 	display : inline-block;
@@ -18,6 +19,7 @@ section form [value="게시"]{
 	font-size : 17px;
 	border : 1px solid #22FF7B;
 	border-radius : 15%;
+	cursor : pointer;
 }
 section form #clear{
 	clear : both;	

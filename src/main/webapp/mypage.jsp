@@ -73,10 +73,16 @@ $(document).ready(function() {
 					<%}%>
 				</div>
 				<div id="tab2" class="content">
-					<%for(Collections c: clist){ %>
-						<div class="sav"><%=c.getColname() %></div>
-						<input type="hidden" value="<%=c.getColcode()%>">
-					<%} %>
+					<%
+					int number = 0;
+					for(Collections c: clist){ 
+					%>
+						<form id="frm" action="collectionBoard.jsp" method="post">
+							<div class="sav" onclick="mv(<%=number%>)"><%=c.getColname() %></div>
+							<input type="hidden" name="colname" value="<%=c.getColname()%>">
+							<input type="hidden" name="colcode" value="<%=c.getColcode()%>">
+						</form>
+					<%number++;} %>
 				</div>
 				<div id="tab3" class="content">
 					<% 
@@ -124,6 +130,10 @@ span.onclick = function(){
 	if(rel){
 		location.href="delete.jsp?bcode="+code;
 	}
+}
+function mv(num){
+	var frm = document.querySelectorAll("#frm");
+	frm[num].submit();
 }
 </script>
 <script type="text/javascript" src="js/mypage.js"></script>

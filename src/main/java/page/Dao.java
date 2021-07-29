@@ -335,6 +335,34 @@ public class Dao {
 		}
 		return clist;
 	}
+	// 컬랙션 내부 내용
+	public ArrayList<Board> colBoard(String colcode){
+		ArrayList<Board> blist = new ArrayList<Board>();
+		try {
+			String sql = "select a.bcode,img from Board a, (select bcode from collectionBoard where colcode = ?) b "
+					+ "where a.bcode = b.bcode order by wdate desc";
+			conn = DBConnection.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, colcode);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				Board b = new Board();
+				b.setBcode(rs.getString("bcode"));
+				b.setImg(rs.getString("img"));
+				blist.add(b);
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return blist;
+	}
 	// 게시물 저장
 	public void saveBoard(String colcode,String bcode) {
 		try {

@@ -74,10 +74,21 @@ public class Service {
 			}
 			return clist;
 		}
-		// 게시물 저장
-		public String saveBoard(String colcode,String bcode) {
-			dao.saveBoard(colcode, bcode);
-			return "저장완료";
+	// 컬랙션 내부 내용
+	public String colBoard(String colcode) {
+		ArrayList<Board> blist = dao.colBoard(colcode);
+		int num = 1;
+		for(Board b:blist) {
+			System.out.print(num++ + " ");
+			System.out.println(b.getImg());
+			System.out.println("---------------------------------------");
 		}
+		return "출력";	
+	}
+	// 게시물 저장
+	public String saveBoard(String colcode,String bcode) {
+		dao.saveBoard(colcode, bcode);
+		return "저장완료";
+	}
 }
 
