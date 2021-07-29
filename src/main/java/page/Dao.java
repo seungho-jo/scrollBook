@@ -339,7 +339,8 @@ public class Dao {
 	public ArrayList<Board> colBoard(String colcode){
 		ArrayList<Board> blist = new ArrayList<Board>();
 		try {
-			String sql = "select a.bcode,img from Board a, (select bcode from collectionBoard where colcode = ?) b "
+			String sql = "select a.bcode,img from Board a, "
+					+ "(select bcode from collectionBoard where colcode = ?) b "
 					+ "where a.bcode = b.bcode order by wdate desc";
 			conn = DBConnection.getConnection();
 			pstmt = conn.prepareStatement(sql);
