@@ -115,7 +115,7 @@ h3 {
 		<div class="box">
 			<div class="clear"></div>
 			<ul class="items">
-				<a href="post.jsp"><li><img src="img/yellow_tulip.jpg" width="100%" height="100%"></li></a>
+				<a href="post2.jsp"><li><img src="img/yellow_tulip.jpg" width="100%" height="100%"></li></a>
 				<a href=""><li><img src="img/튤립2.JPG" width="100%" height="100%"></li></a>
 				<a href=""><li><img src="img/튤립3.jpg" width="100%" height="100%"></li></a>
 				<a href=""><li><img src="img/튤립4.jpg" width="100%" height="100%"></li></a>
