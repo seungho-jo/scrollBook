@@ -9,9 +9,9 @@
 	String id = (String)session.getAttribute("idKey");
 	String pubRange = request.getParameter("pubRange");
 	String contents = request.getParameter("contents");
-	String img = request.getParameter("profile_pt");
-	String tag = request.getParameter("tag");
-	String loc = request.getParameter("loc");
+	String img = request.getParameter("profile_pt"); if(img==null) img="";
+	String tag = request.getParameter("tag"); if(tag==null) tag="";
+	String loc = request.getParameter("loc"); if(loc==null) loc="";
 	Service sv = new Service();
 	Board b = new Board();
 	b.setPubRange(pubRange);

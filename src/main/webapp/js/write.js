@@ -9,6 +9,20 @@
  var val2 = document.querySelector("#value2");
  var hidval2 = document.querySelector("[name=loc]");
  var vv = document.querySelector("#profile_pt");
+ var pubRange = document.querySelector("select");
+ var content = document.querySelector("textarea"); 
+ var btn = document.querySelector("#btn");
+ var frm = document.querySelector("#frm");
+ btn.onclick = function(){
+	var cont = pubRange.options[pubRange.selectedIndex].text; 
+	if(cont == '선택하세요'){
+		alert("공개범위를 선택하세요");
+	}else if(content.value==""){
+		alert("내용을 작성해 주세요");
+	}else{
+		frm.submit();
+	}
+ }
  var win;
  upload.onclick = function(){
  	vv.click();

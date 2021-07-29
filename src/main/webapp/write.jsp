@@ -13,9 +13,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<section>
-		<form action="writeProc.jsp">
+		<form id="frm" action="writeProc.jsp">
 			<h2>게시물 만들기</h2>
-			<input type="submit" value="게시">
+			<input id="btn" type="button" value="게시">
 			<div id="clear"></div>
 			<select name="pubRange">
 				<option>선택하세요</option>
