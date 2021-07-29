@@ -55,6 +55,29 @@ String path = request.getContextPath();
 	background-color: #22FF7B;
 	border: 1.5px solid #22FF7B;
 }
+#comments {
+    font-size: 15px;
+    margin: 10px;
+    padding-left: 30px;
+    padding-bottom: 15px;
+    padding-right: 23px;
+    line-height: 29px;
+}
+.com_id {
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+.com_date {
+	color: darkgray;
+	font-size: 12px;
+	float: right;
+	font-weight: normal;
+}
+
+.like, .bookmark, .share, [name=submit], #comment_profile, .writer_img img, .writer_id {
+	cursor: pointer;
+}
 </style>
 <script type="text/javascript">
 	function resize(obj) {
@@ -73,11 +96,12 @@ String path = request.getContextPath();
 			String[] img = {"cat.jpeg", "catcat.jpeg", "bambi.jpg", "summer.jpg", "yellow_tulip.jpg", "튤립4.jpg", "summer.png",
 					"튤립8.JPG", "튤립6.jpg"};
 			String[] like = {"2521", "23", "5", "11", "1309", "34", "992", "3", "1"};
+			int none = 0;
 			for (int cnt = 0; cnt < 9; cnt++) {
 			%>
 			<div class="post_info">
-				<div class="writer_img">
-					<img src="img/cat.jpeg">
+				<div class="writer_img" onclick="move()">
+					<img src="img/<%=img[cnt] %>">
 					<div class="writer_id">
 						<span><%=ids[cnt]%></span>
 					</div>
@@ -93,7 +117,9 @@ String path = request.getContextPath();
 						<div class="like" onclick="changeColor()">
 							<i class="far fa-heart fa-lg"></i>
 						</div>
-						<i class="far fa-comment fa-lg"></i>
+						<div class="bookmark" onclick="fill()">
+							<i class="far fa-bookmark fa-lg"></i>
+						</div>
 						<div class="share" onclick="showPopup()">
 							<i class="fas fa-share-alt fa-lg"></i>
 						</div>
@@ -113,33 +139,34 @@ String path = request.getContextPath();
 				</div>
 
 				<div id="comments">
-					<%
-					String content = request.getParameter("new_comment");
-					if (content == null) {
-						content = ""; }%>
-					<span><%=content %></span>
+					<span class="com_<%=none%>"></span>
 				</div>
 				<div class="post_comment">
 					<a href="mypage.jsp" id="comment_profile"><img
 						src="img/bambi.jpg"></a>
 					<div class="comment_content">
-					<form id="frm01">
-						<textarea name="new_comment" placeholder="댓글 달기.."
+						<textarea class="new_comment_<%=none %>" name="new_comment" placeholder="댓글 달기.."
 							onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
-						<button type="submit" name="submit" onclick="warnEmpty()">게시</button>
-					</form>
+						<button type="button" name="submit" onclick="warnEmpty(<%=none%>)">게시</button>
 					</div>
 				</div>
 			</div>
 			<%
+			none++;
 			}
 			%>
 		</section>
 	</div>
 </body>
 <script type="text/javascript">
-	function warnEmpty() {
-	document.querySelector("#frm01").submit();
+	function move(){
+		location.href="mypage2.jsp"
+	}
+	function warnEmpty(idx) {
+		console.log(idx);
+		var content = document.querySelector(".new_comment_"+idx).value;
+		var com = document.querySelector(".com_"+idx);
+		com.innerHTML += "<br><span class='com_id'>jsh95320</span>&nbsp&nbsp&nbsp&nbsp"+content+"<span class='com_date'>2021.7.30&nbsp14:20</span";
 	}
 	var chImg = true;
 	function changeColor() {
@@ -159,6 +186,19 @@ String path = request.getContextPath();
 
 		chImg = !chImg;
 		console.log(chImg);
+	}
+	var chFill = true;
+	function fill() {
+		var bookmark = document.querySelector(".bookmark");
+		var full = '<i class="fas fa-bookmark fa-lg"></i>';
+		var nfull = '<i class="far fa-bookmark fa-lg"></i>';
+		if (chFill) {
+			bookmark.innerHTML = full;
+		} else {
+			bookmark.innerHTML = nfull;
+		}
+
+		chFill = !chFill;
 	}
 	function dblclick() {
 		changeColor();
