@@ -48,6 +48,11 @@ public class Controller {
 		d.addAttribute("컬랙션 리스트", clist = sv.colList(id));
 		return "mypage.jsp";
 	}
+	// 컬랙션 내용
+	public String colBoard(Model d,int num) {
+		d.addAttribute("컬랙션 내용", sv.colBoard(clist.get(num-1).getColcode()));
+		return "mypage.jsp";
+	}
 	// 게시물 저장
 	public String saveBoard(Model d,int num) {
 		d.addAttribute("게시물 저장", sv.saveBoard(clist.get(num-1).getColcode(), bcode));

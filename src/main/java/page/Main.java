@@ -14,6 +14,7 @@ public class Main {
 		String id = sc.nextLine();
 		System.out.print("비밀번호: ");
 		String pass = sc.nextLine();
+		/*
 		// 게시물 조회
 		ctl.boardList(new Model(), id);
 		
@@ -21,6 +22,7 @@ public class Main {
 		System.out.println("게시물 선택");
 		int choice = Integer.parseInt(sc.nextLine());
 		ctl.setBoard(new Model(), choice, id);
+		*/
 		/*
 		// 게시물 수정
 		System.out.println("#게시글 작성#");
@@ -69,7 +71,7 @@ public class Main {
 		String tag = sc.nextLine();
 		ctl.tagBoard(new Model(), tag);
 		*/
-		
+		/*
 		// 컬랙션 생성
 		System.out.print("컬랙션 이름을 지어주세요: ");
 		String colname = sc.nextLine();
@@ -84,6 +86,11 @@ public class Main {
 			int num = Integer.parseInt(sc.nextLine());
 			ctl.saveBoard(new Model(), num);
 		}
+		*/
+		ctl.colList(new Model(), id);
+		System.out.println("컬랙션 선택 : ");
+		int num = Integer.parseInt(sc.nextLine());
+		ctl.colBoard(new Model(), num);
 	}
 
 }
