@@ -24,9 +24,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<section>
-		<form action="updateProc.jsp">
+		<form id="frm" action="updateProc.jsp">
 			<h2>게시물 만들기</h2>
-			<input type="submit" value="게시">
+			<input id="btn" type="button" value="게시">
 			<div id="clear"></div>
 			<select name="pubRange">
 				<option>선택하세요</option>
@@ -45,12 +45,13 @@
 			<input type="button" value="clear" onclick="clears()">
 			<input type="button" value="check" onclick="checkWin1()">
 			<p class="value1"><%=blist.getTag() %></p>
-			<input name="tag" type="hidden">
+			<input name="tag" type="hidden" value=<%=blist.getTag() %>>
 			<hr>
 			<label id="loc">위치</label>
 			<input type="button" value="check" onclick="checkWin2()">
 			<p id="value2"><%=blist.getLoc() %></p>
-			<input name="loc" type="hidden">
+			<input name="loc" type="hidden" value="<%=blist.getLoc()%>">
+			<input type="hidden" name="bcode" value="<%=bcode %>">
 		</form>
 	</section>
 	<jsp:include page="footer.jsp"></jsp:include>

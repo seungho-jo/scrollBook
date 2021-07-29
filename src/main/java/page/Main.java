@@ -14,7 +14,7 @@ public class Main {
 		String id = sc.nextLine();
 		System.out.print("비밀번호: ");
 		String pass = sc.nextLine();
-		/*
+		
 		// 게시물 조회
 		ctl.boardList(new Model(), id);
 		
@@ -22,8 +22,8 @@ public class Main {
 		System.out.println("게시물 선택");
 		int choice = Integer.parseInt(sc.nextLine());
 		ctl.setBoard(new Model(), choice, id);
-		*/
-		/*
+		
+		
 		// 게시물 수정
 		System.out.println("#게시글 작성#");
 		System.out.println("내용");
@@ -43,7 +43,7 @@ public class Main {
 		board.setPubRange(pubRange);
 		board.setID(id);
 		ctl.updateBoard(new Model(), board);
-		*/
+		
 		/*
 		// 로그인 이후 게시물 작성
 		System.out.println("#게시글 작성#");
