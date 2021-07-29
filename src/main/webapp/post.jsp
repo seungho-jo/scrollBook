@@ -18,7 +18,7 @@
 		border-radius: 70%;
 		overflow: hidden;
 	}
-	.post_info{
+	.post_info, .post_comment{
 	display : flex;
 	align-items : flex-end;
 	justify-content : space-between;
