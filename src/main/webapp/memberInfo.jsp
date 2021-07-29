@@ -25,7 +25,7 @@
 						<a href = ""><span> 프로필 사진 바꾸기</span></a>
 					</div>
 				</div>
-				<form action = "#" name= "retouchprofile" onsubmit="return checkprof();">
+				<form action = "#" name= "retouchprofile" >
 					<div class = "list">
 						<table>
 							<tr><th>이메일</th>

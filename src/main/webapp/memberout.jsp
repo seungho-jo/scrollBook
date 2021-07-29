@@ -51,5 +51,5 @@
 	</div>
 	<jsp:include page = "footer.jsp"></jsp:include>
 </body>
-<script type = "text/javascript" src = "memberout.js"></script>
+<script type = "text/javascript" src = "js/memberout.js"></script>
 </html>

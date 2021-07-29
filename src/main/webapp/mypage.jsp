@@ -100,7 +100,7 @@ $(document).ready(function() {
 			<div>
 				<table>
 					<tr>
-						<td colspan="2"><h4>Seungho_Jo</h4> &nbsp;&nbsp;<a href="#">프로필편집</a></td>
+						<td colspan="2"><h4>Seungho_Jo</h4> &nbsp;&nbsp;<a href="memberInfo.jsp">프로필편집</a></td>
 					</tr>
 					<tr>
 						<td>FOLLOWER</td>

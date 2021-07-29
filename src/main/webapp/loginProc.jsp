@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="EUC-KR"
+    import = "loginPage.*"
+%>
 <%
 	request.setCharacterEncoding("utf-8");
 	String id = request.getParameter("id");
