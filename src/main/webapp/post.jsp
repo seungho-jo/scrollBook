@@ -160,7 +160,7 @@ String path = request.getContextPath();
 </body>
 <script type="text/javascript">
 	function move(){
-		location.href="mypage2.jsp"
+		location.href="mypage2.jsp?id=bangbang23"
 	}
 	function warnEmpty(idx) {
 		console.log(idx);

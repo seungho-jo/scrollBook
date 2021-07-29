@@ -6,7 +6,7 @@
 	import = "java.util.*"
 %>
 <%
-	String id = (String)session.getAttribute("idKey");
+	String id = request.getParameter("id");
 	Dao dao = new Dao();
 	ArrayList<Board> list = dao.boardList(id);
 	ArrayList<Collections> clist = dao.colList(id);
@@ -75,7 +75,7 @@ $(document).ready(function() {
 						<div class="up_del">
 							<a href="update.jsp?bcode=<%=b.getBcode()%>">수정</a><br><span>삭제</span>
 						</div>
-						<a href="#"><img class="picture" src="img/thumb02.jpg"></a>
+						<a href="#"><img class="picture" src="img/<%=b.getImg()%>"></a>
 						<input type="hidden" value="<%=b.getBcode()%>">
 					</div>
 					<%}%>
