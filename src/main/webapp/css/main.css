@@ -94,47 +94,19 @@ section {
 	color: #404040;
 	padding: 0 15px;
 }
+.writer_img img, #comment_profile img {
+	width: 30px;
+	height: 30px;
+	border-radius: 70%;
+	overflow: hidden;
+}
 
-.comment_row {
-	margin-top: 20px;
+.post_info {
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
+	justify-content: space-between;
+	margin-top: 50px;
 }
 
-[name=new_comment] {
-	margin-left: 20px;
-	font-size: 13px;
-	text-align: left;
-	outline: none;
-	padding: 0;
-	float: left;
-	border: 0;
-	resize: none;
-	line-height: 18px;
-	text-align: start;
-	cursor: text;
-	font: 400 13.3333px Arial;
-}
 
-[name=new_comment]:focus {
-	text-align: left;
-	outline: none;
-	font-size: 13px;
-	caret-color: #22FF7B;
-}
 
-[name=submit] {
-	padding: 0 20px 0 20px;
-	border: none;
-	color: #22FF7B;
-	background-color: transparent;
-	font-weight: bold;
-	font-size: 17px;
-	float: right;
-}
-
-[name=submit]:hover {
-	color: white;
-	background-color: #22FF7B;
-	border: 1.5px solid #22FF7B;
-}
