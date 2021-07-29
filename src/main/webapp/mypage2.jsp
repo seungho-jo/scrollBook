@@ -25,6 +25,9 @@ button {
     border: 1px solid #22FF7B;
     padding: 4px 10px;
 }
+button:hover{
+	cursor: pointer;
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

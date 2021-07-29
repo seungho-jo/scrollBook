@@ -145,7 +145,7 @@ String path = request.getContextPath();
 					<a href="mypage.jsp" id="comment_profile"><img
 						src="img/bambi.jpg"></a>
 					<div class="comment_content">
-						<textarea class="new_comment_<%=none %>" name="new_comment" placeholder="댓글 달기.."
+						<textarea class="new_comment_<%=none %>" name="new_comment" id="text" placeholder="댓글 달기.."
 							onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
 						<button type="button" name="submit" onclick="warnEmpty(<%=none%>)">게시</button>
 					</div>
@@ -165,8 +165,13 @@ String path = request.getContextPath();
 	function warnEmpty(idx) {
 		console.log(idx);
 		var content = document.querySelector(".new_comment_"+idx).value;
+		if(document.getElementById("text").value==''){
+			alert("댓글을 입력해주세요");
+		}else{
 		var com = document.querySelector(".com_"+idx);
 		com.innerHTML += "<br><span class='com_id'>jsh95320</span>&nbsp&nbsp&nbsp&nbsp"+content+"<span class='com_date'>2021.7.30&nbsp14:20</span";
+		document.getElementById("text").value='';
+		}
 	}
 	var chImg = true;
 	function changeColor() {
