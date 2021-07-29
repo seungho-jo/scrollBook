@@ -60,7 +60,6 @@ $(document).ready(function() {
 				<div id="list">
 					<ul>
 						<li><a href="#tab1"><img src="img/게시물.PNG"></a></li>
-						<li><a href="#tab2"><img src="img/컬랙션.PNG"></a></li>
 						<li><a href="#tab3"><img src="img/태그됨.PNG"></a></li>
 					</ul>
 				</div>
@@ -80,18 +79,7 @@ $(document).ready(function() {
 					</div>
 					<%}%>
 				</div>
-				<div id="tab2" class="content">
-					<%
-					int number = 0;
-					for(Collections c: clist){ 
-					%>
-						<form id="frm" action="collectionBoard.jsp" method="post">
-							<div class="sav" onclick="mv(<%=number%>)"><%=c.getColname() %></div>
-							<input type="hidden" name="colname" value="<%=c.getColname()%>">
-							<input type="hidden" name="colcode" value="<%=c.getColcode()%>">
-						</form>
-					<%number++;} %>
-				</div>
+				
 				<div id="tab3" class="content">
 					<% 
 						for(Board tb:taglist){
