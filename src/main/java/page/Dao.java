@@ -1,7 +1,6 @@
 package page;
 
 import java.sql.Connection;
-
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,8 +11,8 @@ public class Dao {
 	PreparedStatement pstmt = null;
 	ResultSet rs = null;
 	// 게시물 작성
-	public void writeBoard(Board b) {
-		String[] ids = b.getID().split("@");
+	public void writeBoard(Board b) { // 게시물코드,내용,공개범위,사진,태그,장소
+		String[] ids = b.getID().split("@"); // @이름,@이름2,....
 		String[] tags = b.getTag().split(",");
 		int num = 7;
 		try {
@@ -128,7 +127,7 @@ public class Dao {
 						+ "WHERE a.BCODE = b.bcode "
 						+ "AND a.bcode = ? "
 						+ "AND ID = ? ";
-				conn = DBConnection.getConnection();
+				conn = DBConnection.getConnection();     // 001 @이름 001 @이름2 001 @이름3 -> @이름,@이름1,@이름3
 				pstmt = conn.prepareStatement(sql);
 				pstmt.setString(1, bcode);
 				pstmt.setString(2, id);

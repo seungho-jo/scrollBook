@@ -1,12 +1,10 @@
 package loginPage;
 
 import java.sql.Connection;
-
-
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
 
 public class MemberDao {
 
@@ -14,7 +12,7 @@ public class MemberDao {
 	PreparedStatement pstm = null; 
 	ResultSet rs = null;  
 	
-	// 회원가입
+	// 회원가입/수정
 	 public boolean register(Member m) {
 		  String[] ids = m.getEmail().split("@");
 	      boolean flag = false;
