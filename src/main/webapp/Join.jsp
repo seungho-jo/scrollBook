@@ -9,7 +9,7 @@
 <link rel = stylesheet href = "css/login_CSS.css"/>
 </head>
 <body>
-	<form method = "post" action="login.jsp" name = "userInfo" onsubmit="return checkValue()">
+	<form method = "post" action="joinProc.jsp" name = "userInfo" onsubmit="return checkValue()">
 		<div id = "divScrollMain">
 		<img src = "img/ScrollBook.png" width=250px height = 100px>
 			<div class = "IdPass">
