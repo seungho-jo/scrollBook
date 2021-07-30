@@ -82,7 +82,9 @@
 						<div class="like"  onclick="changeColor()">
 							<i class="far fa-heart fa-lg"></i>
 						</div>
-						<i class="far fa-comment fa-lg"></i>
+						<div class="bookmark" onclick="fill()">
+							<i class="far fa-bookmark fa-lg"></i>
+						</div>
 						<div class="share" onclick="showPopup()">
 						<i class="fas fa-share-alt fa-lg"></i>
 						</div>
@@ -134,6 +136,19 @@
 		
 		chImg=!chImg;
 		console.log(chImg);
+	}
+	var chFill = true;
+	function fill() {
+		var bookmark = document.querySelector(".bookmark");
+		var full = '<i class="fas fa-bookmark fa-lg"></i>';
+		var nfull = '<i class="far fa-bookmark fa-lg"></i>';
+		if (chFill) {
+			bookmark.innerHTML = full;
+		} else {
+			bookmark.innerHTML = nfull;
+		}
+
+		chFill = !chFill;
 	}
 	function dblclick(){
 		changeColor();

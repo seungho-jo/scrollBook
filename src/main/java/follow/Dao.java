@@ -45,7 +45,6 @@ public class Dao {
 	// 팔로워 보기
 	public ArrayList<Follow> followerList(String id) {
 		ArrayList<Follow> list = new ArrayList<Follow>();
-		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		try {
 			String sql = "select id from scrollbook_follow where follow = ?";
 			conn = DBConnection.getConnection();
@@ -78,7 +77,6 @@ public class Dao {
 	// 팔로잉 보기
 	public ArrayList<Follow> followingList(String id) {
 		ArrayList<Follow> list = new ArrayList<Follow>();
-		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		try {
 			String sql = "select follow from scrollbook_follow where id = ?";
 			conn = DBConnection.getConnection();

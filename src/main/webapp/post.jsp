@@ -179,8 +179,8 @@ String path = request.getContextPath();
 		var cnt = document.querySelector(".post_likes");
 		var full = '<i class="fas fa-heart fa-lg"></i>';
 		var nfull = '<i class="far fa-heart fa-lg"></i>';
-		var cnt1 = '<span>좋아요&nbsp1개</span>';
-		var cnt0 = '<span>좋아요&nbsp0개</span>';
+		var cnt1 = '<span>좋아요&nbsp2522개</span>';
+		var cnt0 = '<span>좋아요&nbsp2521개</span>';
 		if (chImg) {
 			like.innerHTML = full;
 			cnt.innerHTML = cnt1;
