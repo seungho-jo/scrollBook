@@ -22,6 +22,7 @@
 	}
 	}
 %>
+<!-- ¿¬½À¿ë -->
 <script>
 	alert("<%=msg%>");
 	location.href="<%=url%>";
